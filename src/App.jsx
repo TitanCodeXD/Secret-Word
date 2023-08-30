@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
+import StartScreen from './components/StartScreen/StartScreen'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <>
       <div className='App'>
-        <h2>Secret Word</h2>
+        <StartScreen />
       </div>
     </>
   )
