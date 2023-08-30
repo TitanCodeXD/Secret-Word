@@ -1,0 +1,16 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, rgba(83,42,42,1) 26%, rgba(71,26,26,1) 54%, rgba(25,23,23,1) 100%);
+    color: white;
+}
+
+::selection {
+    color:black;
+    background-color: red;
+}
