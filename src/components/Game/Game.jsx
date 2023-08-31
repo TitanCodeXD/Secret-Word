@@ -6,7 +6,7 @@ const Game = ({verifyLetter}) => {
 
   return ( 
 
-    <div className = "game">
+    <div className = "game font">
 
         <p className = "points">
         <span>Pontuação: 0000</span>
@@ -14,18 +14,20 @@ const Game = ({verifyLetter}) => {
 
         <h1>Adivinhe a Palavra:</h1>
 
-        <h3 className='Tip'>
+        <h3 className='tip'>
         Dica sobre a palavra: <span>Dica...</span>
         </h3>
         
         <div className='wordContainer'>
 
         <span className='letter'>A</span>
-        <span className='blackSquare'></span>
+        <span className='letter'>A</span>
+        <span className='letter'>A</span>
+        <span className='blackSquare'>a</span>
 
         </div>
 
-        <div>
+        <div className='letterContainer'>
             <p>Tente adivinhar uma letra da palavra:</p>
             <form>
                 <input type='text' name= "letter" maxLength="1" required></input>
