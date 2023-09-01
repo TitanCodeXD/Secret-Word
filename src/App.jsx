@@ -1,5 +1,5 @@
 //React
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 //CSS
 import './App.css'
@@ -21,6 +21,7 @@ import GameOver from './components/GameOver/GameOver';
     {id: 3, name: "end"},
   ];
 
+  const guessesNumber = 3;  //Variável para Número de Tentativas
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
-  const [guesses, setGuesses] = useState(3);
+  const [guesses, setGuesses] = useState(guessesNumber);
   const [score, setScore] = useState(0);
 
   const pickWordAndCategory = () => {
@@ -74,7 +75,7 @@ function App() {
 //Process the letter input 
 const verifyLetter = (letter) => {
   const normalizedLetter = letter.toLowerCase();
-  console.log(normalizedLetter)
+  console.log(normalizedLetter) 
 
   // Check if letter has already been utilized
   if (guessedLetters.includes(normalizedLetter) || 
@@ -94,17 +95,30 @@ const verifyLetter = (letter) => {
       ...actualWrongLetters, 
       normalizedLetter,
     ]);
+
+    setGuesses((actualGuesses) => actualGuesses - 1)
   }
-
-  console.log(guessedLetters);
-  console.log(wrongLetters);
-
 };
 
+  const clearLetterStates = () => {
+    setGuessedLetters([]);
+    setWrongLetters([]);
+  };
+
+  useEffect(() => {
+    if (guesses <= 0) {
+      //Reset all states
+      clearLetterStates();
+
+      setGameStage(stages[2].name)
+    }
+  }, [guesses]);
 
 //Restarts the Game
 const retry = () => {
-  setGameStage(stages[0].name)
+  setScore(0);
+  setGuesses(guessesNumber);
+  setGameStage(stages[0].name);
 };
 
 
