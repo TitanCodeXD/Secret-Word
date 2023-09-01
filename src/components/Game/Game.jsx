@@ -32,7 +32,7 @@ const Game = ({
     <div className = "game font">
 
         <p className = "points">
-        <span>Pontuação: {score}</span>
+        Pontuação: <span>{score}</span>
         </p>
 
         <h1>Adivinhe a Palavra:</h1>
