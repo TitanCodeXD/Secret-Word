@@ -52,7 +52,7 @@ function App() {
 
 
   window.onload = function() {
-    retry();
+    setGameStage(stages[0].name);
     };
 
 //Starts
@@ -108,7 +108,7 @@ const verifyLetter = (letter) => {
     setWrongLetters([]);
   };
 
-  //Check if hesses ended
+  //Check if guesses ended
   useEffect(() => {
     if (guesses <= 0) {
       //Reset all states
@@ -128,7 +128,7 @@ useEffect(() => {
 
     //Add Score
     setScore((actualScore)=> actualScore += 100);
-    setGuesses((actualGuesses)=> actualGuesses += 2)
+    setGuesses((actualGuesses)=> actualGuesses += 2);
 
     //Restart game with a new word
     startGame();
