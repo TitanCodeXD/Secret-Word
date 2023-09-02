@@ -11,3 +11,19 @@
 .fim h2 {
     margin-bottom: 35px;
 }
+
+@media only screen and (max-device-width: 900px) {
+    .fim h1 { 
+        margin-bottom: 80px;
+        margin-top: 150px;
+        color: red;
+    }
+
+    .fim span {
+        color: yellow;
+    }
+
+    .fim h2 {
+        margin-bottom: 6vh;
+    }
+}

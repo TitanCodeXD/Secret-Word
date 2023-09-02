@@ -21,7 +21,7 @@ import GameOver from './components/GameOver/GameOver';
     {id: 3, name: "end"},
   ];
 
-  const guessesNumber = 3;  //Variável para Número de Tentativas
+  const guessesNumber = 7;  //Variável para Número de Tentativas
 
 function App() {
 
@@ -128,6 +128,7 @@ useEffect(() => {
 
     //Add Score
     setScore((actualScore)=> actualScore += 100);
+    setGuesses((actualGuesses)=> actualGuesses += 2)
 
     //Restart game with a new word
     startGame();

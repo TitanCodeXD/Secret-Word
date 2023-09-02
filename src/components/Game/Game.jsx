@@ -40,14 +40,14 @@ const Game = ({
         <h3 className='tip'>
         Dica sobre a palavra: <span>{pickedCategory}</span>
         </h3>
-        <p>Você ainda tem {guesses} tentativa(s).</p>
+        <p className = "guesses">Você ainda tem {guesses} tentativa(s).</p>
+        <p className = "information">~Acentuação é importante~</p>
+        <p className = "information">~A cada palavra certa +2 vidas~</p>
         
         <div className='wordContainer'>
 
         {letters.map((letter, i) => (guessedLetters.includes(letter) ? (<span key = {i} className="letter">{letter}</span>)  :  (<span key = {i} className='blackSquare'></span>) ))}
-
         </div>
-
         <div className='letterContainer'>
             <p>Tente adivinhar uma letra da palavra:</p>
             <form onSubmit={handleSubmit}>
