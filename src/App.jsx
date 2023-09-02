@@ -21,7 +21,7 @@ import GameOver from './components/GameOver/GameOver';
     {id: 3, name: "end"},
   ];
 
-  const guessesNumber = 7;  //Variável para Número de Tentativas
+  const guessesNumber = 10;  //Variável para Número de Tentativas
 
 function App() {
 
@@ -87,6 +87,7 @@ const verifyLetter = (letter) => {
   }
 
   //Push guessedLetter or remove a chance/guess
+  
   if (letters.includes(normalizedLetter)) {
     setGuessedLetters((actualGuessedLetters) => [
       ...actualGuessedLetters, 
@@ -124,14 +125,17 @@ useEffect(() => {
   const uniqueLetters = [... new Set(letters)]
 
   // Win Condition
-  if (guessedLetters.length === uniqueLetters.length) {
+  if (guessedLetters.length === uniqueLetters.length && gameStage === stages[1].name) {
 
     //Add Score
     setScore((actualScore)=> actualScore += 100);
+    //Add Lives
     setGuesses((actualGuesses)=> actualGuesses += 2);
 
     //Restart game with a new word
-    startGame();
+    setTimeout(function () {
+      startGame();
+    }, 600);
   }
 
 }, [guessedLetters, letters, startGame]);
