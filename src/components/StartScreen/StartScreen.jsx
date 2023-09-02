@@ -15,7 +15,7 @@ const StartScreen = ({startGame}) => {
           <footer>
           <p>
     &copy; Created by
-    <a class = "contact-success"href="https://codepen.io/titancodexd" target="_blank"
+    <a href="https://codepen.io/titancodexd" target="_blank"
        ><strong> Wesley Roberto dos Santos.</strong></a>
   </p>
           </footer>

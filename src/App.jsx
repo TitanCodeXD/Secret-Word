@@ -52,7 +52,7 @@ function App() {
 
 
   window.onload = function() {
-    setGameStage(stages[0].name);
+    retry();
     };
 
 //Starts
